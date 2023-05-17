@@ -1,0 +1,176 @@
+EMPLOYEE MANAGEMENt
+
+Employee:employee ID, name, address, contact information, job title, salary
+
+Department:  department ID, name, location, manager
+
+Position:position ID, title, description, and possibly salary information.
+
+Salary: salary ID, employee ID, salary amount, start date, and end date.
+
+Leave:leave ID, employee ID, leave type (sick leave, vacation, etc.), start date, end date
+
+Attendance : attendance ID, employee ID, date, time in, time out.
+
+Performance Review:  review ID, employee ID, review date, reviewer's name, performance ratings
+
+
+___---------------------------------------------------
+
+TICKET BOOKING
+
+User:
+
+UserID (primary key)
+First Name
+Last Name
+Email
+Phone Number
+Address
+
+
+Movie:
+
+MovieID (primary key)
+Title
+Genre
+Director
+Release Date
+Duration
+
+
+Theater:
+
+TheaterID (primary key)
+Theater Name
+Location
+Capacity
+
+
+Screen:
+
+ScreenID (primary key)
+TheaterID (foreign key)
+Screen Number
+Seating Capacity
+
+
+Showtime:
+
+ShowtimeID (primary key)
+MovieID (foreign key)
+TheaterID (foreign key)
+ScreenID (foreign key)
+Showtime Date
+Showtime Time
+Available Seats
+Ticket Price
+
+
+Ticket:
+
+TicketID (primary key)
+ShowtimeID (foreign key)
+UserID (foreign key)
+Seat Number
+Ticket Price
+Ticket Status
+
+Payment:
+
+PaymentID (primary key)
+UserID (foreign key)
+TicketID (foreign key)
+Payment Amount
+Payment Date
+Payment Status
+
+Booking:
+
+BookingID (primary key)
+UserID (foreign key)
+ShowtimeID (foreign key)
+Booking Date
+Number of Tickets
+Booking Status
+
+
+
+Seat:
+
+SeatID (primary key)
+ScreenID (foreign key)
+Seat Number
+Seat Availability
+-------------------------------------------------------
+
+Farmer:
+
+FarmerID (primary key)
+First Name
+Last Name
+Contact Number
+Address
+Land Details
+
+Crop:
+
+CropID (primary key)
+Crop Name
+Crop Type (e.g., cereals, vegetables, fruits)
+Planting Season
+Expected Yield
+
+Product:
+
+ProductID (primary key)
+Product Name
+Product Type (e.g., seeds, fertilizers, pesticides)
+Manufacturer
+Price
+
+Order:
+
+OrderID (primary key)
+FarmerID (foreign key)
+ProductID (foreign key)
+Quantity
+Order Date
+Delivery Date
+Order Status
+
+Payment:
+
+PaymentID (primary key)
+OrderID (foreign key)
+Amount
+Payment Date
+Payment Status
+
+Inventory:
+
+InventoryID (primary key)
+ProductID (foreign key)
+Quantity
+Purchase Date
+Expiry Date
+
+Advisory:
+
+AdvisoryID (primary key)
+CropID (foreign key)
+Description
+Date
+
+Staff:
+
+StaffID (primary key)
+First Name
+Last Name
+Contact Number
+Address
+Role/Position
+
+
+
+

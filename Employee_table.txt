@@ -1,0 +1,71 @@
+-- Create Employee table
+CREATE TABLE Employee (
+  EmployeeID INT PRIMARY KEY,
+  FirstName VARCHAR(50),
+  LastName VARCHAR(50),
+  Email VARCHAR(100),
+  PhoneNumber VARCHAR(20),
+  Address VARCHAR(100),
+  HireDate DATE,
+  DepartmentID INT,
+  PositionID INT,
+  SupervisorID INT
+);
+
+-- Create Department table
+CREATE TABLE Department (
+  DepartmentID INT PRIMARY KEY,
+  DepartmentName VARCHAR(50),
+  ManagerID INT
+);
+
+-- Create Position table
+CREATE TABLE Position (
+  PositionID INT PRIMARY KEY,
+  PositionTitle VARCHAR(50)
+);
+
+-- Create Payroll table
+CREATE TABLE Payroll (
+  PayrollID INT PRIMARY KEY,
+  EmployeeID INT,
+  Salary DECIMAL(10, 2),
+  PaymentDate DATE
+);
+
+-- Create Benefits table
+CREATE TABLE Benefits (
+  BenefitID INT PRIMARY KEY,
+  EmployeeID INT,
+  BenefitType VARCHAR(50),
+  CoverageDetails VARCHAR(200)
+);
+
+-- Create Training table
+CREATE TABLE Training (
+  TrainingID INT PRIMARY KEY,
+  EmployeeID INT,
+  TrainingName VARCHAR(100),
+  TrainingDate DATE,
+  TrainerName VARCHAR(100)
+);
+
+-- Create Performance table
+CREATE TABLE Performance (
+  PerformanceID INT PRIMARY KEY,
+  EmployeeID INT,
+  ReviewDate DATE,
+  PerformanceRating DECIMAL(4, 2),
+  ReviewerName VARCHAR(100)
+);
+
+
+-- Create EmployeeRecords table
+CREATE TABLE EmployeeRecords (
+  EmployeeRecordsID INT PRIMARY KEY,
+  EmployeeID INT,
+  RecordType VARCHAR(50),
+  RecordDetails VARCHAR(200)
+
+);
+

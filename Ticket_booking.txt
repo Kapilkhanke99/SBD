@@ -1,0 +1,73 @@
+
+CREATE TABLE User (
+  UserID INT PRIMARY KEY,
+  FirstName VARCHAR(50),
+  LastName VARCHAR(50),
+  Email VARCHAR(100),
+  PhoneNumber VARCHAR(20),
+  Address VARCHAR(100)
+);
+
+
+CREATE TABLE Movie (
+  MovieID INT PRIMARY KEY,
+  Title VARCHAR(100),
+  Genre VARCHAR(50),
+  Director VARCHAR(50),
+  ReleaseDate DATE,
+  Duration INT
+);
+
+
+CREATE TABLE Theater (
+  TheaterID INT PRIMARY KEY,
+  TheaterName VARCHAR(100),
+  Location VARCHAR(100),
+  Capacity INT
+  -- Other relevant columns
+);
+
+
+CREATE TABLE Screen (
+  ScreenID INT PRIMARY KEY,
+  TheaterID INT,
+  ScreenNumber INT,
+  SeatingCapacity INT
+  -- Other relevant columns
+);
+
+
+CREATE TABLE Showtime (
+  ShowtimeID INT PRIMARY KEY,
+  MovieID INT,
+  TheaterID INT,
+  ScreenID INT,
+  ShowtimeDate DATE,
+  ShowtimeTime TIME,
+  AvailableSeats INT,
+  TicketPrice DECIMAL(10, 2)
+  -- Other relevant columns
+);
+
+
+CREATE TABLE Ticket (
+  TicketID INT PRIMARY KEY,
+  ShowtimeID INT,
+  UserID INT,
+  SeatNumber VARCHAR(20),
+  TicketPrice DECIMAL(10, 2),
+  TicketStatus VARCHAR(20)
+  -- Other relevant columns
+);
+
+
+CREATE TABLE Payment (
+  PaymentID INT PRIMARY KEY,
+  UserID INT,
+  TicketID INT,
+  PaymentAmount DECIMAL(10, 2),
+  PaymentDate DATE,
+  PaymentStatus VARCHAR(20)
+);
+
+
